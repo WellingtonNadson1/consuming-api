@@ -1,5 +1,5 @@
 async function getContent(){
-    let url = 'https://swapi.dev/api/people/1/'
+    let url = 'http://localhost:3000/'
     try {
         const response = await fetch(url)
         const data = await response.json()

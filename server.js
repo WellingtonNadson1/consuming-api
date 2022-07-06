@@ -19,10 +19,14 @@ app.use(cors())
 
 // CONSUMINDO UMA API EXTERNA COM AXIOS E FORNECENDO A MINHA ROTA GET
 router.get('/', async (req, res) => {
-    const url = 'https://swapi.dev/api/people/1/'
-    const { data } = await axios(url)
-
-    return res.json(data)
+    try {
+        const url = 'https://swapi.dev/api/people/1/'
+        const { data } = await axios(url)
+        return res.json(data)
+        
+    } catch (error) {
+        console.error(error)
+    }
 })
 
 
